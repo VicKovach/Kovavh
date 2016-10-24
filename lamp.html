@@ -1,0 +1,86 @@
+﻿<html>
+<head>
+<title>Андроид в тени</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+<style type="text/css">
+body{
+margin:0;
+background:black;
+}
+#lamp{
+margin-right:0;
+float:right;
+height:100%;
+width:700px;
+background: url(http://videosmile.ru/forum/u_uploads/158/1717/maxi/2015-03-01-21-42-big_355dcce7af59f0d0073842d7ea23ec13.jpg) -40px -175px;
+}
+
+#switcher{
+float:left;
+height:60px;
+width:60px;
+margin: 25% 20%;
+border-radius:50%;
+background-image: url(http://freeiconbox.com/icon/256/26402.png);
+background-size: cover;
+background-color:green;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: none;
+ 
+  
+  -webkit-animation: gpulsate 1.2s linear infinite;
+  animation: gpulsate 1.2s linear infinite;
+}
+#switcher:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+#switcher:active {
+
+height:56px;
+width:56px;
+  top: 1px;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+}
+@-webkit-keyframes gpulsate {
+  50% {color: #fff; box-shadow: 0 -1px rgba(0,0,0,.3), 0 0 8px #ffd, 0 0 10px #fff;}
+}
+@keyframes gpulsate {
+  50% {color: #fff; box-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 10px #fff;}
+}
+</style>
+
+</style>
+</head>
+<body>
+<button id="switcher"></button>
+<div id="lamp"></div>
+<script>
+
+var switcher = false;
+$('#switcher').click(function(){
+
+switcher = switcher ? false :true;
+switch(switcher){
+case true: {
+$('#lamp').css({'background':'url(http://videosmile.ru/forum/u_uploads/158/1717/maxi/2015-03-01-21-42-big_355dcce7af59f0d0073842d7ea23ec13.jpg) -700px -180px'});
+$('#switcher').css({'background-color':'red'});
+}
+break;
+case false: {
+$('#lamp').css({'background':'url(http://videosmile.ru/forum/u_uploads/158/1717/maxi/2015-03-01-21-42-big_355dcce7af59f0d0073842d7ea23ec13.jpg) -40px -175px'});
+$('#switcher').css({'background-color':'green'});
+}
+break;
+};
+});
+
+</script>
+
+</body>
+</html>
